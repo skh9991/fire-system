@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#BF2A1E">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>소방 계통도 훈련판</title>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>소방 계통도 훈련판</h1>
+    <div class="group"><span class="seg-l">설비</span><div class="seg" id="sysSeg"></div></div>
+    <button class="btn iconbtn" id="teachBtn" type="button">교수 모드</button>
+    <button class="btn" id="fullBtn" type="button">전체 화면</button>
+  </header>
+  <div class="bar">
+    <div class="group"><span class="seg-l">활동</span><div class="seg" id="modeSeg"></div></div>
+    <div class="group" id="levelGroup"><span class="seg-l">난이도</span><div class="seg" id="levelSeg"></div></div>
+    <label class="seedbox" id="seedGroup" for="seedInput">문제 번호<input id="seedInput" inputmode="numeric" maxlength="4"></label>
+    <button class="btn" id="newBtn" type="button">새 문제</button>
+  </div>
+  <div class="work">
+    <section class="sheetwrap" aria-label="계통도">
+      <div class="scroll"><svg id="stage" viewBox="0 0 1200 760" role="img" aria-label="소방 계통도"></svg></div>
+      <div class="legend">
+        <span><i></i>소화수 배관</span><span><i class="s"></i>전기 신호</span><span><i class="t"></i>시험·순환 배관</span>
+        <button class="btn" id="fitBtn" type="button" style="margin-left:auto">도면 전체 보기</button>
+      </div>
+      <div class="tb">
+        <div><small>도면명</small><b class="k" id="tbName"></b></div>
+        <div><small>활동</small><b class="k" id="tbMode"></b></div>
+        <div><small>문제 번호</small><b id="tbSeed"></b></div>
+        <div><small>축척</small><b>NONE</b></div>
+        <div><small>참조 기준</small><b id="tbCode"></b></div>
+      </div>
+    </section>
+    <aside id="panel" aria-live="polite"></aside>
+  </div>
+  <footer>학습용으로 단순화한 계통도입니다. 세부 밸브, 배선 가닥수, 설비별 예외는 생략했습니다. 수치와 설치 위치는 현행 화재안전기술기준과 대조해 수업에 사용하세요.</footer>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
